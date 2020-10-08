@@ -28,4 +28,6 @@ if guess == target
   guessed_it = true;
 elsif guess < target
   puts "#{oops_string} LOW"
+else
+  puts "#{oops_string} HIGH"
 end
