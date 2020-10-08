@@ -13,3 +13,11 @@ puts "I've got a random number between 1 and 100."
 puts "Can you guess it?"
 target = rand(100) + 1
 
+num_guesses = 0
+
+guessed_it = false
+
+oops_string = "Oops. You guess was"
+
+puts "#{10 - num_guesses} guesses left."
+  
