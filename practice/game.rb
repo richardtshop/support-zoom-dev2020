@@ -26,4 +26,6 @@ guess = gets.to_i
 if guess == target
   puts "Good job, #{name}! You guessed my number in #{num_guesses} guesses!"
   guessed_it = true;
+elsif guess < target
+  puts "#{oops_string} LOW"
 end
