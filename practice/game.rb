@@ -22,3 +22,8 @@ oops_string = "Oops. You guess was"
 puts "#{10 - num_guesses} guesses left."
 print "Make a guess: "
 guess = gets.to_i
+
+if guess == target
+  puts "Good job, #{name}! You guessed my number in #{num_guesses} guesses!"
+  guessed_it = true;
+end
