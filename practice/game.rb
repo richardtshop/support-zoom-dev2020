@@ -20,4 +20,5 @@ guessed_it = false
 oops_string = "Oops. You guess was"
 
 puts "#{10 - num_guesses} guesses left."
-  
+print "Make a guess: "
+guess = gets.to_i
