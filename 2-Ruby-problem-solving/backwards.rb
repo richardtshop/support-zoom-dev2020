@@ -4,9 +4,7 @@ print "Input your first and last name: "
 
 input = gets.chomp
 
-
 # Split user's name 
-
 input_array = input.split(" ")
 
 p input_array.size
