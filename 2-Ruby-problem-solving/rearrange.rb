@@ -7,31 +7,34 @@
 puts "If you enter an integer, I will rearrange the digits to output the largest number"
 print "Enter an integer: "
 
-input_number = gets.chomp
+input = gets.chomp
+
+
+# if number is only -0, return input
+if input == "-0"
+  puts input
+  return
+end
+
 
 # Check if input string is "0" 
 # If not, then check if to_i converts to 0 
 # Which indicates it is not an integer
 # And prompt user again until a valid number is entered
-while (input_number != "0" && input_number != "-0") && input_number.to_i == 0
-  print "Not a number, please enter an integer: "
-  input_number = gets.chomp
+while ((input != "0" && input != "-0") && input.to_i == 0) || # checks if input is numerical
+  input.to_i.to_s != input # checks if input is a float
+  print "Not an integer, please enter an integer: "
+  input = gets.chomp
 end 
 
-# if number is only one digit or -0, return number
-if input_number = "-0"
-  puts input_number
+
+# If input number is a single integer, return it
+if input.length == 1
+  puts input
   return
 end
 
-if input_number.length == 1
-  puts input_number
-  puts true
-  return
-end
-
-
-input_array = input_number.split("")
+input_array = input.split("")
 
 # Check if input is negative
 negative_number = input_array[0] == "-"
