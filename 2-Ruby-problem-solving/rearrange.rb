@@ -1,6 +1,3 @@
-# TO DO
-# Need to reject float inputs
-
 # Find the maximum of two numbers entered by a user
 # If the user doesn't enter a number, prompt them to enter a number
 
