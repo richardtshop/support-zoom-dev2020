@@ -1,11 +1,23 @@
-def create_triangle(sides)
-  if sides == 0
+def create_triangle(rows)
+  if rows == 0
     puts ""
     return
   end
-  for num in 1..sides do
-    print " " * (sides - num)
+  for num in 1..rows do
+    print " " * (rows - num)
     puts "* " * num
+  end
+  create_triangle_reverse(rows-1)
+end
+
+def create_triangle_reverse(rows)
+  if rows == 0
+    puts ""
+    return
+  end
+  for num in rows.downto(1) do
+    print " " * (rows - num)
+    puts " *" * num
    end
 end
 
