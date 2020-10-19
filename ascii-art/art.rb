@@ -18,7 +18,7 @@ def ascii_art
   
    # validate input
    # check if input is string or float or 0 of below
-   while input_int <= 0 || input_int.to_s != input 
+   while input_int < 0 || input_int.to_s != input 
      print "Not an integer, please enter an integer: "
      input = gets.chomp
    end 
