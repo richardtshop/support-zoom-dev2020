@@ -1,7 +1,11 @@
 def create_triangle(sides)
+  if sides == 0
+    puts ""
+    return
+  end
   for num in 1..sides do
     print " " * (sides - num)
-    puts "*" * num
+    puts "* " * num
    end
 end
 
@@ -23,3 +27,4 @@ def ascii_art
 end
 
 ascii_art
+
