@@ -6,7 +6,8 @@ def play(choice_1, choice_2)
   paper_wins = "Paper covers rock."
   scissors_win = "Scissors cuts paper."
   rock_wins = "Rock crushes scissors."
-  
+  player1_score = 0
+  player2_score = 0
   
   if choice_1 == choice_2
     puts "Tie!"
@@ -15,22 +16,35 @@ def play(choice_1, choice_2)
     when "Rock"
       if choice_2 == "Scissors"
         puts rock_wins
+        player1_score += 1
       else
         puts paper_wins
+        player2_score += 1
       end
     when "Paper"
       if choice_2 == "Rock"
         puts paper_wins
+        player1_score += 1
       else
         puts scissors_win
+        player2_score += 1
+        
       end
     when "Scissors"
       if choice_2 == "Paper"
         puts scissors_win
+        player1_score += 1
       else
         puts rock_wins
+        player2_score += 1
       end
     end
+  end
+  
+  if player1_score > player2_score
+    puts "Player 1 wins."
+  elsif player2_score > player1_score
+    puts "Player 2 wins."
   end
 end
 
