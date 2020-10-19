@@ -10,6 +10,7 @@ def ascii_art
    
    # generate triangle
    for num in 1..input_int do
+    print " " * (input_int - num)
     puts "*" * num
    end
   
