@@ -14,6 +14,7 @@
 
 puts "MASTERMIND"
 target = rand(1111...6666)
+# TO DO remove fixed target
 target = 1234
 target_array = target.to_s.split("")
 number_of_guesses = 1;
@@ -39,17 +40,18 @@ while guessed == false
     
     target_array_to_check = target_array.map(&:clone)
     
-    input_array.each_with_index{ |number, index|
+
+    target_array_to_check.each_with_index{ |number, index|
       # check if the current number is present in the array      
-      if target_array_to_check.include?(number)
+      if input_array.include?(number)
         # check if the number is at the exact same position
-        if number == target_array_to_check[index]
+        if number == input_array[index]
           output.unshift("X")
         else
           output.push("x")
         end
-        target_index = target_array_to_check.index(number)
-        target_array_to_check[target_index] = -1 #change the found number to -1 to prevent duplicate matching
+        target_index = input_array.index(number)
+        input_array[target_index] = -1 #change the found number to -1 to prevent duplicate matching
       end
     }
     
