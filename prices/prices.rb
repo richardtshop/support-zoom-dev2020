@@ -1,35 +1,20 @@
-def total(prices)
-  amount = 0
-  index = 0
-  while index < prices.length
-    amount += prices[index]
-    index += 1;
+def do_something_with_every_item(array, operation)
+  if operation == "total" || operation == "refund"
+    amount = 0
   end
-  amount
-end
-
-def total(prices)
-  amount = 0
   index = 0
-  while index < prices.length
-    amount -= prices[index]
-    index += 1;
+  while index < array.length
+    if operation == "total"
+      amount += array[index]
+    elsif operation == "refund"
+      amount -=array[index]
+    elsif operation == "show discounts"
+      amount_off = array[index] / 3.0
+      puts format("$%.2f", amount_off)
+    end
   end
-  amount
-end
-
-def show_discounts(prices)
-  index = 0
-  while index < prices.length
-    amount_off = prices[index] / 3.0
-    puts format("$%.2f", amount_off)
-    index += 1;
+  if operation == "total" || operation == "refund"
+    return amount
   end
 end
 
-prices = [3.99, 25.00, 8.99]
-
-
-
-puts format("%.2f", total(prices))
-puts format("%.2f", refund(prices))
