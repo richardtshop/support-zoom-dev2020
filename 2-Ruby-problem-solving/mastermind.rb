@@ -1,21 +1,9 @@
 # Mastermind guessing game
 
-####
-# To Do
-
-# When user enters multiple duplicate numbers that exceeds the total in the random number, the output may be wrong
-# e.g. 
-# target = 1234
-# guess = 3333
-# output = x
-# because the element is being removed from the array being checked after found the first time
-
 # Potential solution is to loop through the target array and not the user input for the first check for exact match
 
 puts "MASTERMIND"
 target = rand(1111...6666)
-# TO DO remove fixed target
-target = 1234
 target_array = target.to_s.split("")
 number_of_guesses = 1;
 guessed = false
