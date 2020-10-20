@@ -2,22 +2,30 @@
 
 # Potential solution is to loop through the target array and not the user input for the first check for exact match
 
+# TO DO
+# Update target
+
 puts "MASTERMIND"
-target = rand(1111...6666)
-target_array = target.to_s.split("")
+target_array = [0,0,0,0].map{rand(1..6).to_s}
+p target_array
 number_of_guesses = 1;
 guessed = false
 
 print "[#{number_of_guesses}] Enter you guess: " 
 input = gets.chomp
 
+invalid_inputs = ["7", "8", "9", "0"]
+
+
 while guessed == false
   output = []
   input_numerical = input.to_i
-  # Validate input  - numerical integer input between 1111 and 6666
+  # Validate input  - numerical integer input between 1111 and 6666 and doesn't include 7,8,9,0
   # checks 0, negative number and string
   # checks if number is a float
-  unless (input_numerical < 1111 || input_numerical > 6666) || input.to_i.to_s != input 
+  unless invalid_inputs.any?{|letter| input.include? letter} ||
+     (input_numerical < 1111 || input_numerical > 6666) ||
+      input.to_i.to_s != input 
     input_array = input.split("")
     
     # Check if arrays are the same
@@ -33,11 +41,7 @@ while guessed == false
       # check if the current number is present in the array      
       if input_array.include?(number)
         # check if the number is at the exact same position
-        if number == input_array[index]
-          output.unshift("X")
-        else
-          output.push("x")
-        end
+        number == input_array[index] ?  output.unshift("X") :  output.push("x")
         target_index = input_array.index(number)
         input_array[target_index] = -1 #change the found number to -1 to prevent duplicate matching
       end
