@@ -15,23 +15,18 @@ end
 # Place book - adds a book to the library
 
 class Library
+  MAX_BOOKS = 18 # constant for total number of books
+  attr_reader :books # allows reading of the books attribute
   
-  def name=(new_value)
-    @name = new_value
-  end
-  
-  def books
-    @books = []
-  end
-  
-  def name
-    @name
-  end
-  
-  def books
+  # initialize called on Object.new - adding it explicitly allows arguments
+  def initialize(books = []) # set default to empty book
     @books
   end
   
+ # Add book
+ # Remove Book
+ # All books/ look
+ 
 end
 
 
@@ -46,5 +41,5 @@ def place
 end
 
 library = Library.new
-library.name = "Neighbourhood library"
-puts library.name
+puts library.books
+puts library.getMax
