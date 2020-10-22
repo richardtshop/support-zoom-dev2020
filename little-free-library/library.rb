@@ -1,9 +1,11 @@
 #### TO DO
 # Build out user class
 # Build out UI
+# use nil? method to check for nil
 
 # User has name and array of books attributes
 # Look - returns all books in a library array
+
 class User
 end
 
