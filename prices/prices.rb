@@ -1,16 +1,12 @@
 def total(prices)
   amount = 0
-  prices.each do |price|
-    amount += price
-  end
+  prices.each {|price| amount += price }
   amount
 end
 
 def refund(prices)
   amount = 0
-  prices.each do |price|
-    amount -= price
-  end
+  prices.each {|price| amount -= price}
   amount
 end
 
