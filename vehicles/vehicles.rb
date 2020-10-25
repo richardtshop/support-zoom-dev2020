@@ -14,7 +14,7 @@ class Vehicle
   end
   
   def steer
-    puts "Turn front 2 wheels"
+    puts "Turn front 2 wheels."
   end
 end
 
@@ -31,6 +31,10 @@ class Truck < Vehicle
 end
 
 class Motorcycle < Vehicle
+  # overriding superclass method
+  def steer
+    puts "Turn front wheel."
+  end
 end
 
 car = Car.new
@@ -49,3 +53,8 @@ truck.odometer = 11432
 truck.gas_used = 366
 puts "Lifetime MPG:"
 puts truck.mileage
+
+puts car.instance_variables
+
+motorcycle = Motorcycle.new
+motorcycle.steer
