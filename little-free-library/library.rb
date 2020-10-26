@@ -18,7 +18,7 @@ class User
   end
   
   def place_book(library, book_title)
-    if (book_title.is_a? String) && (book_title.length > 0)
+    if (book_title.is_a? String) && (book_title.size > 0)
       book = @books.find{|book| book.title.downcase == book_title.downcase}
     end
     
@@ -50,8 +50,8 @@ class Book
     @pages = pages
   end
   
-  def validateDetails(title, pages = 1)
-    unless (title.is_a? String) && (title.length > 0)
+  def validateDetails(title, pages)
+    unless (title.is_a? String) && (title.size > 0)
       raise "Invalid book title"
     end
     
@@ -66,24 +66,24 @@ class Library
   attr_reader :books
   
    def initialize(books = []) 
-    if books.length > MAX_BOOKS 
-      raise "Maxiumum books allowed: #{MAX_BOOKS}, you tried to create a library with #{books.length} books."
+    if books.size > MAX_BOOKS 
+      raise "Maxiumum books allowed: #{MAX_BOOKS}, you tried to create a library with #{books.size} books."
     end  
     @books = books
   end
   
   def look
-    if @books.length == 0
+    if @books.size == 0
       puts "The library is empty"
     else
-      puts "There are currently #{@books.length} books in the library:"
+      puts "There are currently #{@books.size} books in the library:"
       @books.each_with_index {|book, index| puts "#{index+1}: #{book.title} (#{book.pages} pages)"}
       puts "\n"
     end
   end
   
   def add_book(book)
-    if @books.length >= MAX_BOOKS  
+    if @books.size >= MAX_BOOKS  
       puts "The library is full."
       return false 
     end
@@ -94,7 +94,7 @@ class Library
   end
   
   def remove_book(book_title)
-    if (book_title.is_a? String) && (book_title.length > 0)
+    if (book_title.is_a? String) && (book_title.size > 0)
       book = @books.find{|book| book.title.downcase == book_title.downcase}
     end
     unless book == nil
