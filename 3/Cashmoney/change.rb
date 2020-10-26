@@ -14,7 +14,7 @@ print 'Enter how much change is owed: '
 
 total_dollars = gets.chomp.to_f
 
-while total_dollars <= 0.02
+while total_dollars <= 0
   print 'Invalid total, please enter a valid total: '
   total_dollars = gets.chomp.to_f
 end
@@ -36,16 +36,18 @@ change_coins = {
 }
 
 total_cents = (total_dollars * 100).to_i
-
 change = calculate_coins(total_cents, coin_values, change_coins)
 coin_count = change.values.reduce(:+)
-print 'You need to dispense '
 
-change.each_with_index do |(key, value), index|
-  last = index == change.size - 1
+print coin_count.positive? ? 'You need to dispense ' : 'You don\'t need to dispense change.'
+
+change_reduced = change.delete_if { |_key, value| value.zero? }
+
+change_reduced.each_with_index do |(key, value), index|
   next unless value.positive?
 
-  print 'and ' if last
+  last = index == change.size - 1
+  print 'and ' if last && index != 0
   print "#{value} #{key}#{value > 1 ? 's' : ''}"
   print last ? '.' : ', '
 end
