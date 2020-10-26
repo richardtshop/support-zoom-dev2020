@@ -39,10 +39,10 @@ class Cat < Animal
   end
 end
 
-class Armadillo
+class Armadillo < Animal
   def move(destination)
     puts "#{name} unrolls!"
-    puts "#{@name} runs to the #{destination}."
+    super
   end
 end
 
@@ -53,7 +53,10 @@ fido.name = 'Fido'
 polly = Bird.new
 polly.name = 'Polly'
 polly.age = 2
+arnie = Armadillo.new
+arnie.name = "Arnie"
 
 polly.report_age
 fido.move('yard')
 whiskers.talk
+arnie.move("Tree")
