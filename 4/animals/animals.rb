@@ -3,7 +3,6 @@ class Animal
 
   def name=(value)
     raise "Name can't be blank" if value == ''
-
     @name = value
   end
 
@@ -27,10 +26,15 @@ class Animal
 end
 
 class Dog < Animal
+  def to_s
+    "#{@name} the dog, age #{age}"
+  end
 end
 
 class Bird < Animal
-  puts "#{@name} says Chirp!"
+  def talk
+    puts "#{@name} says Chirp!"
+  end
 end
 
 class Cat < Animal
@@ -41,7 +45,7 @@ end
 
 class Armadillo < Animal
   def move(destination)
-    puts "#{name} unrolls!"
+    puts "#{@name} unrolls!"
     super
   end
 end
@@ -50,6 +54,7 @@ whiskers = Cat.new
 whiskers.name = 'Whiskers'
 fido = Dog.new
 fido.name = 'Fido'
+fido.age = 5
 polly = Bird.new
 polly.name = 'Polly'
 polly.age = 2
@@ -60,3 +65,9 @@ polly.report_age
 fido.move('yard')
 whiskers.talk
 arnie.move("Tree")
+
+rex = Dog.new
+rex.name = "Rex"
+rex.age = 8
+
+puts fido.to_s, rex.to_s
