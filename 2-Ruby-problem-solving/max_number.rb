@@ -8,23 +8,23 @@ print "Please enter the first number: "
 input_number_1 = gets.chomp
 
 # Check if input string is "0"
-# If not, then check if to_1 converts to 0 
+# If not, then check if to_1 converts to 0
 # Which indicates it is not an integer
 # And prompt user again until a valid number is entered
 
 while input_number_1 != "0" && input_number_1.to_i == 0
-  print "Not a number, please enter an integer: "
+  print("Not a number, please enter an integer: ")
   input_number_1 = gets.chomp
-end 
-  
+end
+
 print "Please enter the second number: "
 
 input_number_2 = gets.chomp
 
-while input_number_2  != "0" && input_number_2.to_i == 0
-  print "Not a number, please enter an integer: "
+while input_number_2 != "0" && input_number_2.to_i == 0
+  print("Not a number, please enter an integer: ")
   input_number_1 = gets.chomp
-end 
+end
 
 if input_number_1 < input_number_2
   puts "Max: #{input_number_2}"

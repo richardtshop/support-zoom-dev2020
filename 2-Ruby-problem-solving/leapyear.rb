@@ -1,4 +1,4 @@
-# Ruby program which accept the a year from the user and determines if that year is a leap year or not. 
+# Ruby program which accept the a year from the user and determines if that year is a leap year or not.
 
 print "Enter a year: "
 
@@ -16,7 +16,7 @@ if input_numerical <= 0 || # checks 0, negative number and string
   puts "#{input} is not a valid year"
   return
 end
-  
+
 # Check if it's a leap year
 # Leap years are
 # Years that are divisible by 4
@@ -24,9 +24,8 @@ end
 # Years that are not divisible by 100
 # UNLESS they are also divisible by 400
 
-
 if input_numerical % 4 != 0 || (input_numerical % 100 == 0 && input_numerical % 400 != 0)
   puts "#{input} is a not leap year"
-else 
+else
   puts "#{input} is a leap year"
 end

@@ -4,13 +4,13 @@ print "Input your first and last name: "
 
 input = gets.chomp
 
-# Split user's name 
+# Split user's name
 input_array = input.split(" ")
 
 p input_array.size
 
 while input_array.size != 2
-  print "Invalid input, please enter your first and last name separated by a space: "
+  print("Invalid input, please enter your first and last name separated by a space: ")
   input = gets.chomp
   input_array = input.split(" ")
 end
