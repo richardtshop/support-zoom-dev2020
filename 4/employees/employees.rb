@@ -69,3 +69,15 @@ salaried_employee.print_pay_stub
 
 hourly_employee = HourlyEmployee.new("Jane Smith", 14.97, 30)
 hourly_employee.print_pay_stub
+
+
+ivan = HourlyEmployee.new("Ivan Stokes", 12.75, 25) 
+harold = HourlyEmployee.new("Harold Nguyen", 12.75, 25)
+tamara = HourlyEmployee.new("Tamara Wells", 12.75, 25)
+susie = HourlyEmployee.new("Susie Powell", 12.75, 25)
+
+edwin = HourlyEmployee.new("Edwin Bugress", 10.50, 20)
+ethel = HourlyEmployee.new("Ethel Harris", 10.50, 20)
+
+angela = HourlyEmployee.new("Angela Matthews", 19.25, 30)
+stewart = HourlyEmployee.new("Stewart Sanchez", 19.25, 30)
