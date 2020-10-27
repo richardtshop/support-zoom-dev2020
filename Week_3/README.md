@@ -1,31 +1,31 @@
 # Week 3 schedule
 
 🎥 Watch: Ruby Arrays
+
 📚 Reading: Arrays
-📚 Reading: Arrays
+
 💻 Code Along: Prices
-💻 Code Along: Prices
+
 🎥 Watch: Ruby Blocks
-🎥 Watch: Ruby Blocks
+
 📚 Reading: Blocks
-📚 Reading: Blocks
+
 📚 Reading: Arrays Methods
-📚 Reading: Arrays Methods
+
 Little Free Library
-Little Free Library
+
 💻 Code Along: More Prices
-💻 Code Along: More Prices
+
 🎥 Watch: Ruby Procs
-🎥 Watch: Ruby Procs
+
 🎥 Watch: Ruby Hashes
-🎥 Watch: Ruby Hashes
+
 💻 Code Along: Reviews
-💻 Code Along: Reviews
+
 ✍🏽 Codecademy: Learn Ruby (Modules 4 & 5)
-✍🏽 Codecademy: Learn Ruby (Modules 4 & 5)
-✍🏽 : Cashmoney
-✍🏽 : Cashmoney
+
+✍🏽 Assignment: Cashmoney
+
 99 Bottles
-99 Bottles
-🗂️ Resource: Debugging with Byebug
-🗂️ Resource: Debugging with Byebug
+
+🗂️ Resource: [Debugging with Byebug](https://github.com/richardtshop/support-zoom-dev2020/blob/main/Week_2/Byebug.md)
