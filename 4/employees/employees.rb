@@ -6,9 +6,20 @@ class Employee
     @name = name
   end
 
+  def initialize(name)
+    self.name = name
+  end
+  
   def print_name
     puts "Name: #{name}"
   end
+  
+  def print_pay_stub(pay_for_period)
+    print_name
+    formatted_pay = format("$%.2f", pay_for_period)
+    puts "Pay This Period: #{formatted_pay}"
+  end
+  
 end
 
 class SalariedEmployee < Employee
@@ -20,15 +31,12 @@ class SalariedEmployee < Employee
   end
 
   def initialize(name = "Anonymous", salary = 0.0)
-    self.name = name
+    super(name)
     self.salary = salary
   end
 
   def print_pay_stub
-    print_name
-    pay_for_period = (salary / 365.0) * 14
-    formatted_pay = format("$%.2f", pay_for_period)
-    puts "Pay This Period: #{formatted_pay}"
+    super((salary / 365.0) * 14)
   end
 end
 
@@ -46,16 +54,13 @@ class HourlyEmployee < Employee
   end
 
   def initialize(name = "Anonymous", hourly_wage = 0.0, hours_per_week = 0)
-    self.name = name
+    super(name)
     self.hourly_wage = hourly_wage
     self.hours_per_week = hours_per_week
   end
 
   def print_pay_stub
-    print_name
-    pay_for_period = hourly_wage * hours_per_week * 2
-    formatted_pay = format("$%.2f", pay_for_period)
-    puts "Pay This Period: #{formatted_pay}"
+    super(hourly_wage * hours_per_week * 2)
   end
 end
 
