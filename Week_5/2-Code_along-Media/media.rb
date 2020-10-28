@@ -1,10 +1,6 @@
 module AcceptsComments
   def comments
-    if @comments
-      @comments
-    else
-      @comments = []
-    end
+    @comments = ||= []
   end 
   
   def add_comment(comment)
@@ -30,10 +26,16 @@ end
 
 class Photo
   include AcceptsComments
+  attr_reader :format
+  
+  def initialize
+    @format = 'JPEG'
+  end 
+  
   def show
     puts "Displaying #{object_id}..."
   end
-end
+end  
 
 video = Video.new
 video.add_comment("Cool slow motion effect!")
