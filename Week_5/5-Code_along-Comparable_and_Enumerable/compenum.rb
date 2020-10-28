@@ -1,3 +1,4 @@
+####
 # Comparable module
 
 class Steak
@@ -36,10 +37,11 @@ select.grade = "Select"
 # print "choice.between?(select, prime):"
 # puts choice.between?(select, prime)
 
+####
 # Enumerable module code
 
 class WordSplitter
-  include Enumerable # need to include to be able to user Enumerable methods on objects of this class
+  include Enumerable
 
   attr_accessor :string
 
@@ -48,11 +50,25 @@ class WordSplitter
       yield word
     end
   end
+ 
 end
 
 splitter = WordSplitter.new
-splitter.string = "one two three four"
+splitter.string = "how do you do"
 
-splitter.each do |word|
-  puts word
+capitalize_last = proc do |word|
+  word_array = word.split("")
+  word_array.last.upcase!
+  word = word_array.join("")
 end
+
+p splitter.find_all { |word| word.include?('d')}
+p splitter.reject { |word| word.include?('d')}
+p splitter.map { |word| word.reverse }
+p splitter.map(&:capitalize)
+p splitter.map(&capitalize_last)
+p splitter.map(&:reverse)
+p splitter.any? { |word| word.include?("e")}
+p splitter.count
+p splitter.first
+p splitter.sort
