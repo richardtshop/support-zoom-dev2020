@@ -1,8 +1,0 @@
-inherit_gem:
-  rubocop-shopify: rubocop.yml
-
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
-Metrics/MethodLength:
-  Max: 15
