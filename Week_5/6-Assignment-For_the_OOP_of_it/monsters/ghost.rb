@@ -11,11 +11,19 @@ class Ghost < Monster
     puts "#{name} appears out of nowhere! #{quarry} better run!"
   end
 
+  
+  def scare
+    return puts "#{name} is calm. They don't want to scare." if anger <= 0
+    puts "Woooooooooooo!"
+  end
+  
   def calm(amount)
     self.anger -= amount if amount.is_a?(Integer)
     if anger <= 0
       self.anger = 0
       find_peace
+    else
+      puts "#{name} is calmer, they are not only #{anger}% angry"
     end
   end
 
@@ -23,6 +31,6 @@ class Ghost < Monster
 
   def find_peace
     quarries.clear
-    puts "#{name} has found peace, and won't be haunting anyone any more.!"
+    puts "#{name} has found peace, and won't be haunting anyone any more!"
   end
 end

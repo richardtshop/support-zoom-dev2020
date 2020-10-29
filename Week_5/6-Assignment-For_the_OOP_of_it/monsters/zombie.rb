@@ -16,6 +16,11 @@ class Zombie < Monster
       puts "#{name} is a rotting mess. They can't hurt anyone"
     end
   end
+  
+  def scare 
+    return puts "#{name} is truly dead. But they still look pretty scary" if decomposition == 100
+    puts "#{name} groans in your general direction." 
+  end
 
   def decompose(percentage)
     return puts "#{name} is fully decomposed. They cannot decompose further." if decomposition >= 100
@@ -24,8 +29,3 @@ class Zombie < Monster
   end
 end
 
-zombie = Zombie.new("Pete", "Bathroom", 195)
-zombie.see_quarries
-zombie.decompose(90)
-zombie.decompose(15)
-zombie.decompose(15)
