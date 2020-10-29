@@ -15,13 +15,21 @@ class Monster
   def see_quarries
     return puts "#{name} has no current quarries." if quarries.empty?
 
-    quarry_plural = quarries.size > 1 : "quarries" : "quarry"
+    quarry_plural = quarries.size > 1 ? "quarries" : "quarry"
     puts "#{name} has claimed #{quarries.size} #{quarry_plural}:"
     quarries.each_with_index { |quarry, index| puts "#{index + 1}: #{quarry}" }
   end
 
   def add_quarry(quarry)
     quarries << quarry if validate_string(quarry, :quarries)
+  end
+
+  def scare
+    puts "#{name} roars into the night!"
+  end
+
+  def attack
+    puts "#{name} leaps towards you!"
   end
 
   private
@@ -37,8 +45,3 @@ class Monster
     "#{value} is not a valid input for #{attribute}"
   end
 end
-
-monster = Monster.new("Richard", "Castle", 200)
-puts monster.name
-monster.add_quarry("Robert")
-monster.see_quarries

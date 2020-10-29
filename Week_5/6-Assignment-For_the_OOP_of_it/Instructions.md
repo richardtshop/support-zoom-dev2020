@@ -2,19 +2,19 @@
 
 ## Requirements
 
-### Create a base class with the following specifications:
+### Create a base class with the following specifications
 
-- [ ] Must have 3 attributes
-- [ ] Uses proper Encapsulation
-- [ ] Uses data validation for setting attributes
-- [ ] Contains an array
-- [ ] Has an initialization method
-- [ ] Contains 3 other methods
-- [ ] Uses at least 1 block
+- [x] Must have 3 attributes
+- [x] Uses proper Encapsulation
+- [x] Uses data validation for setting attributes
+- [x] Contains an array
+- [x] Has an initialization method
+- [x] Contains 3 other methods
+- [x] Uses at least 1 block
 
-### Create 3 subclasses that inherit from the base class. Each subclass must:
+### Create 3 subclasses that inherit from the base class. Each subclass must
 
-- [ ] Exist in their own .rb file
+- [x] Exist in their own .rb file
 - [ ] Have at least 1 additional attribute
 - [ ] Have at least 1 additional method.
 - [ ] Overwrite at least 1 parent method.
