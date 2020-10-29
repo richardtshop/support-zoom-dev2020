@@ -13,8 +13,8 @@ class Vampire < Monster
   end
 
   def attack(quarry, day = false)
-    puts "Sneaks #{quarry} behind you to take some blood"
     add_quarry(quarry)
+    puts "Sneaks #{quarry} behind you to take some blood"
     puts "#{name} is blinded by the light! #{quarry} is safe. Watch out at night..." if day
   end
 end

@@ -25,8 +25,8 @@ class Monster
   end
 
   def attack(quarry)
-    puts "#{name} leaps towards you!"
     add_quarry(quarry)
+    puts "#{name} leaps towards #{quarry}!"
   end
 
   private
