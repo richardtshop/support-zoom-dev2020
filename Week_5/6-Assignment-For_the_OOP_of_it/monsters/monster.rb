@@ -20,19 +20,20 @@ class Monster
     quarries.each_with_index { |quarry, index| puts "#{index + 1}: #{quarry}" }
   end
 
-  def add_quarry(quarry)
-    quarries << quarry if validate_string(quarry, :quarries)
-  end
-
   def scare
     puts "#{name} roars into the night!"
   end
 
-  def attack
+  def attack(quarry)
     puts "#{name} leaps towards you!"
+    add_quarry(quarry)
   end
 
   private
+
+  def add_quarry(quarry)
+    quarries << quarry if validate_string(quarry, :quarries)
+  end
 
   def validate_string(value, attribute)
     valid = value.is_a?(String) && !value.empty?

@@ -8,11 +8,12 @@ class Zombie < Monster
     self.decomposition = 0
   end
 
-  def attack
+  def attack(quarry)
     if decomposition < 100
-      puts "#{name} shuffles towards you to eat your brains" 
+      puts "#{name} shuffles towards #{quarry} to eat brains"
+      add_quarry(quarry)
     else
-      puts "#{name} is a rotting mess. You are safe."
+      puts "#{name} is a rotting mess. #{quarry} are safe."
     end
   end
 
