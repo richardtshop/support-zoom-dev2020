@@ -16,10 +16,10 @@ class Zombie < Monster
       puts "#{name} is a rotting mess. They can't hurt anyone"
     end
   end
-  
-  def scare 
+
+  def scare
     return puts "#{name} is truly dead. But they still look pretty scary" if decomposition == 100
-    puts "#{name} groans in your general direction." 
+    puts "#{name} groans in your general direction."
   end
 
   def decompose(percentage)
@@ -28,4 +28,3 @@ class Zombie < Monster
     puts "#{name} is now #{decomposition}% decomposed"
   end
 end
-

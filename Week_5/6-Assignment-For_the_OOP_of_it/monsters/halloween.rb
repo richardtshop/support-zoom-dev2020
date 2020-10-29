@@ -11,7 +11,6 @@ monster.see_quarries
 monster.attack("Richard")
 monster.scare
 
-
 puts "Demonstrating Ghost class"
 ghost = Ghost.new("Cuthbert", "Mansion", 190)
 ghost.attack("Alan")

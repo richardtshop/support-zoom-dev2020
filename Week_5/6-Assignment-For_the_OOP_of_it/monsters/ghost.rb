@@ -11,12 +11,11 @@ class Ghost < Monster
     puts "#{name} appears out of nowhere! #{quarry} better run!"
   end
 
-  
   def scare
     return puts "#{name} is calm. They don't want to scare." if anger <= 0
     puts "Woooooooooooo!"
   end
-  
+
   def calm(amount)
     self.anger -= amount if amount.is_a?(Integer)
     if anger <= 0

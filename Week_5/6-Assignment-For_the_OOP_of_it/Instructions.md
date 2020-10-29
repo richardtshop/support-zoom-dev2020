@@ -15,19 +15,19 @@
 ### Create 3 subclasses that inherit from the base class. Each subclass must
 
 - [x] Exist in their own .rb file
-- [ ] Have at least 1 additional attribute
-- [ ] Have at least 1 additional method.
-- [ ] Overwrite at least 1 parent method.
+- [x] Have at least 1 additional attribute
+- [x] Have at least 1 additional method.
+- [x] Overwrite at least 1 parent method.
 
 ## Instructions
 
 - [x] Create a new branch.
 - [ ] Draw a class diagram and submit to GitHub.
-- [ ] Write a program that:
-  - [ ] Creates new objects
-  - [ ] Demonstrates their functionality
-  - [ ] Calls super()
-  - [ ] Adds and removes values to an array
-- [ ] Remember to make commits along the way!
-- [ ] Push to GitHub.
-- [ ] Create a PR and submit the link in Canvas.
+- [x] Write a program that:
+  - [x] Creates new objects
+  - [x] Demonstrates their functionality
+  - [x] Calls super()
+  - [x] Adds and removes values to an array
+- [x] Remember to make commits along the way!
+- [x] Push to GitHub.
+- [x] Create a PR and submit the link in Canvas.
