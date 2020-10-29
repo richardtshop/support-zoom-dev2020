@@ -1,5 +1,5 @@
 class WordSplitter
-  include Enumerable
+  include Enumerable # need to include to be able to user Enumerable methods on objects of this class
 
   attr_accessor :string
 
@@ -15,3 +15,7 @@ p splitter.find_all { |word| word.include?('d')}
 p splitter.reject { |word| word.include?('d')}
 p splitter.map { |word| word.reverse }
 p splitter.map(&:reverse)
+
+p 4.>(3)
+
+puts String.methods
