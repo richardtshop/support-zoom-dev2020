@@ -2,20 +2,19 @@
 # Comparable module
 
 class Steak
-  
   include Comparable
-  
+
   GRADE_SCORES = { "Prime" => 3, "Choice" => 2, "Select" => 1 }
-  
+
   attr_accessor :grade
-  
+
   def <=>(other)
     if GRADE_SCORES[grade] < GRADE_SCORES[other.grade]
-      return -1
+      -1
     elsif GRADE_SCORES[grade] == GRADE_SCORES[other.grade]
-      return 0
+      0
     else
-      return 1
+      1
     end
     # Alternate method that does the same as the above
     # GRADE_SCORES[grade] <=> GRADE_SCORES[other.grade]
@@ -46,11 +45,10 @@ class WordSplitter
   attr_accessor :string
 
   def each
-    string.split(' ').each do  |word| 
+    string.split(' ').each do |word|
       yield word
     end
   end
- 
 end
 
 splitter = WordSplitter.new
@@ -62,13 +60,13 @@ capitalize_last = proc do |word|
   word = word_array.join("")
 end
 
-p splitter.find_all { |word| word.include?('d')}
-p splitter.reject { |word| word.include?('d')}
+p splitter.find_all { |word| word.include?('d') }
+p splitter.reject { |word| word.include?('d') }
 p splitter.map { |word| word.reverse }
 p splitter.map(&:capitalize)
 p splitter.map(&capitalize_last)
 p splitter.map(&:reverse)
-p splitter.any? { |word| word.include?("e")}
+p splitter.any? { |word| word.include?("e") }
 p splitter.count
 p splitter.first
 p splitter.sort

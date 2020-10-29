@@ -9,12 +9,12 @@ def find_adjective(string)
   words[index + 1]
 end
 
-relevant_lines = lines.find_all{ |line| line.include?("Truncated")}
-reviews = relevant_lines.reject{ |line| line.include?("--")}
+relevant_lines = lines.find_all { |line| line.include?("Truncated") }
+reviews = relevant_lines.reject { |line| line.include?("--") }
 
-adjectives = reviews.map do |review| 
+adjectives = reviews.map do |review|
   adjective = find_adjective(review)
- "'#{adjective.capitalize}'"
+  "'#{adjective.capitalize}'"
 end
 
 puts adjectives
