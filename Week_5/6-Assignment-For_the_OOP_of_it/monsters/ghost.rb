@@ -1,3 +1,5 @@
+require_relative 'monster'
+
 class Ghost < Monster
   attr_accessor :anger
 
