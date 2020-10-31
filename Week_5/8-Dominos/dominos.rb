@@ -11,6 +11,11 @@ class Domino
 
   attr_reader :top, :bottom
 
+  def initialize(top, bottom)
+    @top = top if validate_domino_half(top)
+    @bottom = bottom if validate_domino_half(bottom)
+  end
+
   def self.double_six
     double_six_set = []
     (0..6).each do |bottom|
@@ -19,11 +24,6 @@ class Domino
       end
     end
     double_six_set
-  end
-
-  def initialize(top, bottom)
-    @top = top if validate_domino_half(top)
-    @bottom = bottom if validate_domino_half(bottom)
   end
 
   def to_s
@@ -47,12 +47,35 @@ def swap_tops_and_bottoms(list_of_dominos)
   list_of_dominos.map { |domino| Domino.new(domino.bottom, domino.top) }
 end
 
+def find_dominoes_with(number_of_dots, list_of_dominos)
+  # used select instead of find_all to conform with our ruby style guide
+  list_of_dominos.select { |domino| domino.top == number_of_dots || domino.bottom == number_of_dots }
+end
+
+puts "Single Domino:"
 domino = Domino.new(6, 6)
 domino.to_s
 
+puts "Double six set:"
 double_six_set = Domino.double_six
 double_six_set.each(&:to_s)
 
+puts "Swapped list:"
 domino_list = [Domino.new(0, 6), Domino.new(1, 6), Domino.new(2, 6), Domino.new(3, 6), Domino.new(4, 6)]
 swapped_list = swap_tops_and_bottoms(domino_list)
 swapped_list.each(&:to_s)
+
+puts "Find all with dots:"
+filtered_dominos = find_dominoes_with(2, swapped_list)
+filtered_dominos.each(&:to_s)
+
+###
+# Notes - all the same:
+
+# double_six_set.each do |dom|
+#   dom.to_s
+# end
+
+# double_six_set.each { |dom| dom.to_s }
+
+# double_six_set.each(&:to_s)
