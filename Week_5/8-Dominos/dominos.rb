@@ -1,6 +1,4 @@
 class Domino
-  attr_reader :top, :bottom
-
   DOMINO_PATTERNS = [
     ["|     |", "|     |", "|     |"],
     ["|     |", "|  *  |", "|     |"],
@@ -10,6 +8,18 @@ class Domino
     ["|*   *|", "|  *  |", "|*   *|"],
     ["|*   *|", "|*   *|", "|*   *|"],
   ]
+
+  attr_reader :top, :bottom
+
+  def self.double_six
+    double_six_set = []
+    (0..6).each do |bottom|
+      (0..bottom).each do |top|
+        double_six_set << Domino.new(top, bottom)
+      end
+    end
+    double_six_set
+  end
 
   def initialize(top, bottom)
     @top = top if validate_domino_half(top)
@@ -27,15 +37,16 @@ class Domino
   private
 
   def validate_domino_half(number)
-    valid = number.is_a?(Integer) && number.between?(1, 6)
-    puts "Invalid input: #{number}. Number must be between 1 and 6." unless valid
+    valid = number.is_a?(Integer) && number.between?(0, 6)
+    puts "Invalid input: #{number}. Number must be between 0 and 6." unless valid
     valid
   end
 end
 
-domino = Domino.new(3, 6)
+# domino = Domino.new(6, 6)
 
-p domino.top
-p domino.bottom
+# domino.to_s
 
-domino.to_s
+double_six_set = Domino.double_six
+
+double_six_set.each { |domino| domino.to_s }
