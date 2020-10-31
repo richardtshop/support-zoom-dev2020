@@ -1,10 +1,13 @@
 # Dominos
 
-- [ ] Define a class that represents information about a single [domino](http://en.wikipedia.org/wiki/Dominoes), including a `to_s` method to display the domino using asterisks (`*`)and any other characters needed, displaying them similar to how real dominoes would be laid out.
+- [x] Define a class that represents information about a single [domino](http://en.wikipedia.org/wiki/Dominoes), including a `to_s` method to display the domino using asterisks (`*`)and any other characters needed, displaying them similar to how real dominoes would be laid out.
 
-  - [ ] Make a commit.
+  - [x] Make a commit.
 
-- [ ] In a class method, create and return an array containing a [double-six set of dominoes](http://en.wikipedia.org/wiki/Dominoes#mediaviewer/File:Dominomatrix.svg). The dominoes can be in any order. In code at the bottom of the file, use each to display the entire set to check that your code works. Make a commit.
+- [x] In a class method, create and return an array containing a [double-six set of dominoes](http://en.wikipedia.org/wiki/Dominoes#mediaviewer/File:Dominomatrix.svg). The dominoes can be in any order.
+
+  - [x] In code at the bottom of the file, use each to display the entire set to check that your code works.
+  - [x] Make a commit.
 
 - [ ] Under the class definition, write a method called `swap_tops_and_bottoms`, which will take in a list of dominoes and use the `map` method to return a new list of dominoes in the same order as the old one, but where the top and bottom values have been swapped.
       _For example, if the first domino in the list is a 4-3, the first domino in the new list will be 3-4._

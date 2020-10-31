@@ -43,10 +43,16 @@ class Domino
   end
 end
 
-# domino = Domino.new(6, 6)
+def swap_tops_and_bottoms(list_of_dominos)
+  list_of_dominos.map { |domino| Domino.new(domino.bottom, domino.top) }
+end
 
-# domino.to_s
+domino = Domino.new(6, 6)
+domino.to_s
 
 double_six_set = Domino.double_six
+double_six_set.each(&:to_s)
 
-double_six_set.each { |domino| domino.to_s }
+domino_list = [Domino.new(0, 6), Domino.new(1, 6), Domino.new(2, 6), Domino.new(3, 6), Domino.new(4, 6)]
+swapped_list = swap_tops_and_bottoms(domino_list)
+swapped_list.each(&:to_s)
