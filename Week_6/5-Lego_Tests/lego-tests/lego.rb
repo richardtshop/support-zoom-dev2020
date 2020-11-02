@@ -67,7 +67,7 @@ class LegoMinifigure
     end
   end
 
-  def left_item_words
+  def right_item_words
     if @right_item
       if @hat == nil and @left_item == nil
         item_connector = ", who is holding"
@@ -109,7 +109,3 @@ class LegoMinifigure
     @left_item.is_heavy(10) || @right_item.is_heavy(10)
   end
 end
-
-
-hat = LegoHat.new("Big", "Red", "Top")
-puts hat.to_s
