@@ -42,40 +42,58 @@ This class allows the creation of lego minifigure that has for instance variable
 #### Methods
 
 `initialize`: sets the values of the instance variables to the passed arguments. name is required and other values default to `nil`.
-`to_s`: Outputs a string that describes the Lego Figure, using the figure's name and interpolating strings from the three `words` methods
+
+`to_s`: Outputs a string that describes the Lego Figure, using the figure's name and interpolating strings from the three `words` methods.
+
 `hat_words`: returns a string based on what variables are set to values or nil.
+
 `left_item_words`: returns a string based on what variables are set to values or nil.
+
 `right_item_words`: returns a string based on what variables are set to values or nil.
-`is_stylish`: returns true if the hat colour is red or blue
-`swap_hands`: swaps the items in the left and right hands
-`wear_hat`: sets hat item instance variable to passed argument value
-`place_in_left_hand`: sets left hand instance variable to passed argument value
-`place_in_right_hand`: sets right hand instance variable to passed argument value
+
+`is_stylish`: returns true if the hat colour is red or blue.
+
+`swap_hands`: swaps the items in the left and right hands.
+
+`wear_hat`: sets hat item instance variable to passed argument value.
+
+`place_in_left_hand`: sets left hand instance variable to passed argument value.
+
+`place_in_right_hand`: sets right hand instance variable to passed argument value.
+
 `is_strong`: returns true if either left or right item is heavy, from `item.is_heavy(10)`
 
 ## Expected Behaviour
 
-`initialize`: Initializes instance variables using passed values or defaults
+`initialize`: Initializes instance variables using passed values or defaults.
+
 `to_s`: Outputs the interpolated string
 
-`hat_words` expects a threshold value as an argument and this should be numerical and will return a string
+`hat_words` expects a threshold value as an argument and this should be numerical and will return a string.
+
 `left_item_words` and `left_item_words` will return a string.
-`is_stylish` returns a boolean depeneding on the colour of the hat (if any)
+`is_stylish` returns a boolean depeneding on the colour of the hat (if any).
+
 `swap_hands` expects the items in the left and right hands to be swapped
-`wear_hat` expects a LegoHat object to be passed
-`place_in_left_hand`/`place_in_right_hand` expects a LegoItem object to be passed
-`is_strong` returns a boolean which depends on the weight of the items in left/right handes
+`wear_hat` expects a LegoHat object to be passed.
+
+`place_in_left_hand`/`place_in_right_hand` expects a LegoItem object to be passed.
+
+`is_strong` returns a boolean which depends on the weight of the items in left/right handes.
 
 ## Limits
 
-`initialize` for LegoHat has three required parameters, colour is expected to be a string for the `is_stylish?` method to work in `LegoMinifigure`
-`initialize` for LegoItem has two required parameters. Weight is expected to be a string for `is_heavy`
+`initialize` for LegoHat has three required parameters, colour is expected to be a string for the `is_stylish?` method to work in `LegoMinifigure`.
+
+`initialize` for LegoItem has two required parameters. Weight is expected to be a string for `is_heavy`.
+
 `initialize` for LegoMinifigure can take between 1 and 4 arguments, as hat, left_item and right_item have default values.
 
-`wear_hat` needs LegoHat object to be passed
-`place_in_left_hand`/`place_in_right_hand` needs a LegoItem object to be passed
+`wear_hat` needs LegoHat object to be passed.
 
-`is_heavy` accepts only one argument
+`place_in_left_hand`/`place_in_right_hand` needs a LegoItem object to be passed.
+
+`is_heavy` accepts only one argument.
 
 ## Exceptional/error cases
 
@@ -87,7 +105,7 @@ Also, not an error but `colour` is called using the attribute reader set in `att
 
 Additionally is doesn't look like any of the reader or writer methods set in the `attr_accessor`s in each class are ever used, with all attributes being written and read directly using `@attribute`
 
-## Notes
+## Additional notes
 
 upcase downcase
 arguments
@@ -106,10 +124,10 @@ is_heavy no question mark
 `colour` used attribute reader
 `@style` accesses instance variable directly and doesn't use attribute reader
 
-Legoitem
+`Legoitem`
 
 `attr_accessor :name, :weight`
 
-These are never used. Attributes are set/get directly
+These are never used. Attributes are set/get directly.
 
-Doesn't look like attribute accessors are ever used, neither to set or get
+Actually it doesn't look like attribute accessors are ever used, neither to set or get.
