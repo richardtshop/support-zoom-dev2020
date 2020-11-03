@@ -1,5 +1,4 @@
 class LegoHat
-
   attr_accessor :size, :colour, :style
 
   def initialize(size, colour, style)
@@ -9,12 +8,11 @@ class LegoHat
   end
 
   def to_s
-    "a #{size_word} #{colour} #{@style}"
+    "a #{size} #{colour} #{style}"
   end
 end
 
 class LegoItem
-
   attr_accessor :name, :weight
 
   def initialize(name, weight)
@@ -26,13 +24,14 @@ class LegoItem
     "a #{@weight} gram #{@name}"
   end
 
-  def is_heavy(threshold)
+  private
+
+  def heavy?(threshold)
     @weight > threshold
   end
 end
 
 class LegoMinifigure
-
   attr_accessor :name, :hat, :left_item, :right_item
 
   def initialize(name, hat = nil, left_item = nil, right_item = nil)
@@ -56,10 +55,10 @@ class LegoMinifigure
 
   def left_item_words
     if @left_item
-      if @hat == nil
-        item_connector = ", who is holding"
+      item_connector = if @hat.nil?
+        ", who is holding"
       else
-        item_connector = " and is holding"
+        " and is holding"
       end
       "#{item_connector} #{@left_item} in the left hand"
     else
@@ -69,20 +68,20 @@ class LegoMinifigure
 
   def right_item_words
     if @right_item
-      if @hat == nil and @left_item == nil
-        item_connector = ", who is holding"
-      elsif @left_item == nil
-        item_connector = " and is holding"
+      item_connector = if @hat.nil? && @left_item.nil?
+        ", who is holding"
+      elsif @left_item.nil?
+        " and is holding"
       else
-        item_connector = " and "
+        " and "
       end
-      "#{item_connector}#{@right_item} in the right hand"
+      "#{item_connector} #{@right_item} in the right hand"
     else
       ""
     end
   end
 
-  def is_stylish?
+  def stylish?
     @hat.colour == "red" || @hat.colour == "blue"
   end
 
@@ -105,7 +104,29 @@ class LegoMinifigure
     @right_item = new_item
   end
 
-  def is_strong?
+  def strong?
     @left_item.is_heavy(10) || @right_item.is_heavy(10)
   end
 end
+
+def lego_hat
+  @lego ||= LegoHat.new(4, "blue", "baseball")
+end
+
+def lego_item
+  @lego_item ||= LegoItem.new("sign", 10)
+end
+
+def lego_figure(hat: true, left_item: true, right_item: true)
+  data = []
+  data << 'Alan'
+  data_hat = hat ? lego_hat : nil
+  data << data_hat
+  data_left_item = left_item ? lego_item : nil
+  data << data_left_item
+  data_right_item = right_item ? lego_item : nil
+  data << data_right_item 
+  LegoMinifigure.new(*data)
+end
+
+puts lego_figure(hat: false, left_item: false)

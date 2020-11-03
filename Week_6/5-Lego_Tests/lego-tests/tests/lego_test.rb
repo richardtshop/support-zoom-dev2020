@@ -46,19 +46,22 @@ class LegoItemTest < Minitest::Test
   end
 
   def test_is_heavy_threshold_greater_than_weight
-    refute(@mug.is_heavy(50))
+    refute(@mug.heavy?(50))
   end
 
   def test_is_heavy_threshold_less_than_weight
-    assert(@mug.is_heavy(5))
+    assert(@mug.heavy?(5))
   end
 
   def test_is_heavy_threshold_equal_to_weight
-    refute(@mug.is_heavy(20))
+    refute(@mug.heavy?(20))
   end
 end
 
 class LegoMinifigureTest < Minitest::Test
+  def legoMiniFigure
+  end
+
   def setup
     @stylish_hat = LegoHat.new('large', 'blue', 'baseball')
     @unstylish_hat = LegoHat.new('large', 'yellow', 'baseball')
@@ -184,11 +187,11 @@ class LegoMinifigureTest < Minitest::Test
   end
 
   def test_is_stylish_returns_if_hat_is_blue
-    assert(@figure_stylish_hat.is_stylish?)
+    assert(@figure_stylish_hat.stylish?)
   end
 
   def test_is_stylish_returns_if_hat_is_yellow
-    refute(@figure_unstylish_hat.is_stylish?)
+    refute(@figure_unstylish_hat.stylish?)
   end
 
   def test_swap_hands_swaps
@@ -209,42 +212,42 @@ class LegoMinifigureTest < Minitest::Test
   end
 
   def test_is_strong_with_heavy_item
-    assert(@figure_left_heavy_right_light.is_strong?) # left item heavy
-    assert(@figure_all_items.is_strong?) # right item heavy
-    assert(@figure_left_and_right_heavy.is_strong?) # both heavy
+    assert(@figure_left_heavy_right_light.strong?) # left item heavy
+    assert(@figure_all_items.strong?) # right item heavy
+    assert(@figure_left_and_right_heavy.strong?) # both heavy
   end
 
   def test_is_strong_with_no_heavy_item
-    refute(@figure_left_and_right_light.is_strong?) # none heavy
+    refute(@figure_left_and_right_light.strong?) # none heavy
   end
 
   # fails as left is light and right is nil, cannot call is_strong on nil
   def test_is_strong_with_single_light_item_in_left_hand
-    refute(@figure_hat_left_item.is_strong?) # nothing in right
+    refute(@figure_hat_left_item.strong?) # nothing in right
   end
 
   def test_is_strong_with_single_heavy_item_in_left_hand
-    assert(@figure_left_heavy_right_empty.is_strong?) # nothing in right
+    assert(@figure_left_heavy_right_empty.strong?) # nothing in right
   end
 
   # fails as left is nil so is_strong method cannot be run on nil
   def test_is_strong_with_single_light_item_in_right_hand
-    refute(@figure_left_empty_right_light.is_strong?) # nothing in left
+    refute(@figure_left_empty_right_light.strong?) # nothing in left
   end
 
   # fails as left is nil so is_strong method cannot be run on nil
   def test_is_strong_with_single_heavy_item_in_right_hand
-    assert(@figure_hat_right_item.is_strong?) # nothing in left
+    assert(@figure_hat_right_item.strong?) # nothing in left
   end
 
   # fails as left is nil so is_strong method cannot be run on nil
   def test_is_strong_with_no_items
-    refute(@figure_empty.is_strong?)
+    refute(@figure_empty.strong?)
   end
 
-  # def test_place_in_left_hand_adds_left_hand_item
-  # end
+  def test_place_in_left_hand_adds_left_hand_item
+  end
 
-  # def test_place_in_right_hand_adds_right_hand_item
-  # end
+  def test_place_in_right_hand_adds_right_hand_item
+  end
 end
