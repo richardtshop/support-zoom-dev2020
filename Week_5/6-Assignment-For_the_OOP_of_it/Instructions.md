@@ -2,32 +2,32 @@
 
 ## Requirements
 
-### Create a base class with the following specifications:
+### Create a base class with the following specifications
 
-- [ ] Must have 3 attributes
-- [ ] Uses proper Encapsulation
-- [ ] Uses data validation for setting attributes
-- [ ] Contains an array
-- [ ] Has an initialization method
-- [ ] Contains 3 other methods
-- [ ] Uses at least 1 block
+- [x] Must have 3 attributes
+- [x] Uses proper Encapsulation
+- [x] Uses data validation for setting attributes
+- [x] Contains an array
+- [x] Has an initialization method
+- [x] Contains 3 other methods
+- [x] Uses at least 1 block
 
-### Create 3 subclasses that inherit from the base class. Each subclass must:
+### Create 3 subclasses that inherit from the base class. Each subclass must
 
-- [ ] Exist in their own .rb file
-- [ ] Have at least 1 additional attribute
-- [ ] Have at least 1 additional method.
-- [ ] Overwrite at least 1 parent method.
+- [x] Exist in their own .rb file
+- [x] Have at least 1 additional attribute
+- [x] Have at least 1 additional method.
+- [x] Overwrite at least 1 parent method.
 
 ## Instructions
 
 - [x] Create a new branch.
 - [ ] Draw a class diagram and submit to GitHub.
-- [ ] Write a program that:
-  - [ ] Creates new objects
-  - [ ] Demonstrates their functionality
-  - [ ] Calls super()
-  - [ ] Adds and removes values to an array
-- [ ] Remember to make commits along the way!
-- [ ] Push to GitHub.
-- [ ] Create a PR and submit the link in Canvas.
+- [x] Write a program that:
+  - [x] Creates new objects
+  - [x] Demonstrates their functionality
+  - [x] Calls super()
+  - [x] Adds and removes values to an array
+- [x] Remember to make commits along the way!
+- [x] Push to GitHub.
+- [x] Create a PR and submit the link in Canvas.

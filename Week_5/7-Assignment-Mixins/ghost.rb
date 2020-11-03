@@ -1,4 +1,4 @@
-require_relative 'monster'
+require_relative 'mixins'
 
 class Ghost < Monster
   attr_accessor :anger
