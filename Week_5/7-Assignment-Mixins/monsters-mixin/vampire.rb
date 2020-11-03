@@ -3,7 +3,7 @@ require_relative 'mixins'
 
 class Vampire < Monster
   include Transmutate, CreateAlliances, PowerUp
-    
+ 
   attr_reader :animal
 
   def initialize(name, location, height, animal)
