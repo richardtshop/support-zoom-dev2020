@@ -1,23 +1,17 @@
 # This version creates a hash to store coin values during loop and outputs result
-
-# def initialize_hash(hash, key)
-#   if hash[key].nil?
-#     hash[key] = 1
-#   else
-#     hash[key] += 1
-#   end
-# end
+# Same as change2 but removes initializeHash method and adds to hash inline
 
 def calculate_coins(total_cents, coin_values)
   change_coins = {}
   until total_cents < 5
     current_coin = coin_values.find { |_key, value| value <= total_cents }
     current_coin_key, current_coin_value = current_coin
-    initialize_hash(change_coins, current_coin_key)
+    change_coins[current_coin_key].nil? ? change_coins[current_coin_key] = 1 : change_coins[current_coin_key] += 1
     total_cents -= current_coin_value
   end
-
-  initialize_hash(change_coins, :nickel) if [3, 4].include?(total_cents) # Nickel rounding
+  if [3, 4].include?(total_cents)
+    change_coins[:nickel].nil? ? change_coins[:nickel] = 1 : change_coins[:nickel] += 1
+  end
   change_coins
 end
 
