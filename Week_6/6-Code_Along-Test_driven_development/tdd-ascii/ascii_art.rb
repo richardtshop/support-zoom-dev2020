@@ -3,7 +3,7 @@ class AsciiArt
     shape_str = ''
 
     unless number.zero?
-      1.upto(number).each { |num| shape_str += "#{'*' * num}" }
+      1.upto(number).each { |num| shape_str += "#{'*' * num}\n" }
     end
     shape_str
   end

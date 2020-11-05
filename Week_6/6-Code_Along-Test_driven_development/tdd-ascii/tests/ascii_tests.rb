@@ -11,11 +11,20 @@ class AsciiTest < Minitest::Test
   end
 
   def test_empty_left_triangle
-    assert_equal("", @art_0)
-  end
-
-  def test_single_row_left_triangle
-    assert_equal("*", @art_1)
+    expected = ""
+    actual = @art_0
+    assert_equal(expected, actual)
   end
   
+  def test_single_row_left_triangle
+    expected = "*\n"
+    actual = @art_1
+    assert_equal(expected, actual)
+  end
+  
+  def test_multi_row_left_triangle
+    expected = "*\n**\n"
+    actual = @art_2
+    assert_equal(expected, actual)
+  end
 end
