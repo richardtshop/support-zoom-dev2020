@@ -10,9 +10,12 @@ class AsciiTest < Minitest::Test
     @art_4 = AsciiArt.draw(4)
   end
 
-  def test_triangle
-    expected = ""
-    actual = @art_0
-    assert_equal(expected, actual)
+  def test_empty_left_triangle
+    assert_equal("", @art_0)
   end
+
+  def test_single_row_left_triangle
+    assert_equal("*", @art_1)
+  end
+  
 end
