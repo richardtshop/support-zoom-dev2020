@@ -4,7 +4,7 @@ def calculate_coins(total_cents, coin_values, change_coins)
   until total_cents < 5
     current_coin = coin_values.find { |_key, value| value <= total_cents }
     change_coins[current_coin.first] += 1
-    total_cents -= current_coin[1]
+    total_cents -= current_coin.first
   end
   change_coins[:nickel] += 1 if [3, 4].include?(total_cents) # Nickel rounding
   change_coins
@@ -24,7 +24,7 @@ coin_values = {
   loonie: 100,
   quarter: 25,
   dime: 10,
-  nickel: 5
+  nickel: 5,
 }
 
 change_coins = {
@@ -32,7 +32,7 @@ change_coins = {
   loonie: 0,
   quarter: 0,
   dime: 0,
-  nickel: 0
+  nickel: 0,
 }
 
 total_cents = (total_dollars * 100).to_i

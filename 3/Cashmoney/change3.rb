@@ -29,7 +29,7 @@ coin_values = {
   loonie: 100,
   quarter: 25,
   dime: 10,
-  nickel: 5
+  nickel: 5,
 }
 
 total_cents = (total_dollars * 100).to_i

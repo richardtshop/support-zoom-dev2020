@@ -1,12 +1,12 @@
 # This version creates a hash to store coin values during loop and outputs result
 
-# def initialize_hash(hash, key)
-#   if hash[key].nil?
-#     hash[key] = 1
-#   else
-#     hash[key] += 1
-#   end
-# end
+def initialize_hash(hash, key)
+  if hash[key].nil?
+    hash[key] = 1
+  else
+    hash[key] += 1
+  end
+end
 
 def calculate_coins(total_cents, coin_values)
   change_coins = {}
@@ -35,7 +35,7 @@ coin_values = {
   loonie: 100,
   quarter: 25,
   dime: 10,
-  nickel: 5
+  nickel: 5,
 }
 
 total_cents = (total_dollars * 100).to_i
