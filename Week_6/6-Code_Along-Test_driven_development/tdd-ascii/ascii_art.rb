@@ -24,7 +24,8 @@ class AsciiArt
     1.upto(rows).each { |row| shape_str += "#{' ' * (rows - row)}#{('* ' * row).delete_suffix(' ')}\n" }
     shape_str
   end
-  
+
   def self.draw_diamond(rows)
+    ''
   end
 end
