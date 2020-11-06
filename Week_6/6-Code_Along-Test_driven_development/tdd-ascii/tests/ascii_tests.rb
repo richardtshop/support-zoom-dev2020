@@ -81,10 +81,22 @@ class AsciiTest < Minitest::Test
     actual = @art_diamond_0
     assert_equal(expected, actual)
   end
-  
+
   def test_single_row_diamond
     expected = "*\n"
     actual = @art_diamond_1
+    assert_equal(expected, actual)
+  end
+
+  def test_three_row_diamond
+    expected = " *\n* *\n *\n"
+    actual = @art_diamond_2
+    assert_equal(expected, actual)
+  end
+
+  def test_seven_row_diamond
+    expected = "      *\n     * *\n    * * *\n   * * * *\n  * * * * *\n * * * * * *\n* * * * * * *\n * * * * * *\n  * * * * *\n   * * * *\n    * * *\n     * *\n      *\n"
+    actual = @art_diamond_7
     assert_equal(expected, actual)
   end
   
