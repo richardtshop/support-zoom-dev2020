@@ -1,5 +1,5 @@
 class AsciiArt
-  def self.draw(number)
+  def self.draw_left_triangle(number)
     shape_str = ''
 
     unless number.zero?
@@ -7,4 +7,11 @@ class AsciiArt
     end
     shape_str
   end
+  
+  def self.draw_right_triangle(number)
+    shape_str = ''
+
+
+  end
+  
 end
