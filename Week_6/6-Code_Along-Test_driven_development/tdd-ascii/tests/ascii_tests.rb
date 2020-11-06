@@ -57,4 +57,11 @@ class AsciiTest < Minitest::Test
     actual = @art_centered_0
     assert_equal(expected, actual)
   end
+  
+  def test_single_centered_triangle
+    expected = "*\n"
+    actual = @art_centered_1
+    assert_equal(expected, actual)
+  end
+  
 end

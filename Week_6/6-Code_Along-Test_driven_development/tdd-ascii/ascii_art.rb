@@ -18,6 +18,6 @@ class AsciiArt
   end
   
   def self.draw_centered_triangle(rows)
-    
+    ''
   end
 end
