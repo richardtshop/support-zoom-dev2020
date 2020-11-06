@@ -10,8 +10,5 @@ class AsciiArt
   
   def self.draw_right_triangle(number)
     shape_str = ''
-
-
   end
-  
 end
