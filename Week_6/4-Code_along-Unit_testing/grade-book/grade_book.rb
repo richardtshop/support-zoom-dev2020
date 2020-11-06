@@ -24,7 +24,7 @@ end
 
 class Float
   def to_grade
-    number = to_f
+    number = to_f # returns self
     if number < 50
       'F'
     elsif number < 60
@@ -39,24 +39,13 @@ class Float
   end
 end
 
-grade_book = GradeBook.new
-grade_book.add_grade("christine", 77)
-puts "Grade Book:"
-puts grade_book.grades
-puts "Letter Grades:"
-puts grade_book.letter_grades
-puts "Grade Book:"
-puts grade_book.grades
-puts 78.5.to_grade
-puts "-----------------------"
+# grade_book = GradeBook.new
+# grade_book.add_grade("christine", 77)
+# puts "Grade Book:"
+# puts grade_book.grades
+# puts "Letter Grades:"
+# puts grade_book.letter_grades
+# puts "Grade Book:"
+# puts grade_book.grades
+# puts 78.5.to_grade
 
-grade_book.add_grade("christine", 90) # christine's grade is overwritten
-grade_book.add_grade("Christine", 10) # Christine is added as key with value 10
-grade_book.add_grade("dave", "20") # => dave's graded added as 0.0
-grade_book.add_grade("mike", 660) # => grade entered out of acceptable range perhaps by error. Letter grade returned as A, not D
-grade_book.add_grade("mike", -90) # => grade entered out of acceptable range. Letter grade returned F, could be error and meant to be 90 => A
-
-puts grade_book.letter_grades
-grade_book.add_grade(1, 90) # => error - integer cannot be converted to a symbol
-grade_book.letter_grade("mike") # => error `grade` is not defined
-puts 80.to_grade # => NoMethod error `to_grade` not defined on integer
