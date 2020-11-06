@@ -7,7 +7,7 @@ class AsciiArt
     end
     shape_str
   end
-  
+
   def self.draw_right_triangle(rows)
     shape_str = ''
 
@@ -16,8 +16,12 @@ class AsciiArt
     end
     shape_str
   end
-  
+
   def self.draw_centered_triangle(rows)
-    ''
+    shape_str = ''
+    return shape_str if rows.zero?
+
+    1.upto(rows).each { |row| shape_str += "#{' ' * (rows - row)}#{('* ' * row).delete_suffix(' ')}\n" }
+    shape_str
   end
 end

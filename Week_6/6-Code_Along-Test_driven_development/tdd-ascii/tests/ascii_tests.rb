@@ -14,6 +14,7 @@ class AsciiTest < Minitest::Test
     @art_centered_0 = AsciiArt.draw_centered_triangle(0)
     @art_centered_1 = AsciiArt.draw_centered_triangle(1)
     @art_centered_2 = AsciiArt.draw_centered_triangle(2)
+    @art_centered_10 = AsciiArt.draw_centered_triangle(7)
   end
 
   def test_empty_left_triangle
@@ -61,6 +62,12 @@ class AsciiTest < Minitest::Test
   def test_single_centered_triangle
     expected = "*\n"
     actual = @art_centered_1
+    assert_equal(expected, actual)
+  end
+  
+  def test_seven_row_centered_triangle
+    expected = "      *\n     * *\n    * * *\n   * * * *\n  * * * * *\n * * * * * *\n* * * * * * *\n"
+    actual = @art_centered_10
     assert_equal(expected, actual)
   end
   
