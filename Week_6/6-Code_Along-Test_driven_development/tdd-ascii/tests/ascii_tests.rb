@@ -41,4 +41,10 @@ class AsciiTest < Minitest::Test
     actual = @art_right_1
     assert_equal(expected, actual)
   end
+  
+  def test_multi_row_right_triangle
+    expected = " *\n**\n"
+    actual = @art_left_2
+    assert_equal(expected, actual)
+  end
 end
