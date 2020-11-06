@@ -19,7 +19,7 @@ class AsciiTest < Minitest::Test
     @art_diamond_0 = AsciiArt.draw_diamond(0)
     @art_diamond_1 = AsciiArt.draw_diamond(1)
     @art_diamond_2 = AsciiArt.draw_diamond(2)
-    @art_diamond_10 = AsciiArt.draw_diamond(7)
+    @art_diamond_7 = AsciiArt.draw_diamond(7)
   end
 
   def test_empty_left_triangle
@@ -99,5 +99,4 @@ class AsciiTest < Minitest::Test
     actual = @art_diamond_7
     assert_equal(expected, actual)
   end
-  
 end
