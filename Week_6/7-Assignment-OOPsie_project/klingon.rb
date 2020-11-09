@@ -31,32 +31,32 @@ class Klingon < Humanoid
   end
 end
 
-martok = Klingon.new(
-  name: "Martok",
-  items: {
-    cheese: 1,
-    compass: 1,
-    hat: 2,
-  },
-  age: 50,
-  intelligence: 80,
-  house: "House of Martok"
-)
+# martok = Klingon.new(
+#   name: "Martok",
+#   items: {
+#     cheese: 1,
+#     compass: 1,
+#     hat: 2,
+#   },
+#   age: 50,
+#   intelligence: 80,
+#   house: "House of Martok"
+# )
 
-picard = Humanoid.new(
-  name: "Jean Luc",
-  items: {
-    hammer: 1,
-    compass: 1,
-    hat: 2,
-  },
-  age: 100,
-  intelligence: 90,
-)
-martok.print_items
+# picard = Humanoid.new(
+#   name: "Jean Luc",
+#   items: {
+#     hammer: 1,
+#     compass: 1,
+#     hat: 2,
+#   },
+#   age: 100,
+#   intelligence: 90,
+# )
+# martok.print_items
 
-martok.take_item(humanoid: picard, item_string: "hammer")
-martok.take_item(humanoid: picard, item_string: "poo")
+# martok.take_item(humanoid: picard, item_string: "hammer")
+# martok.take_item(humanoid: picard, item_string: "poo")
 
-martok.print_items
-martok.battle_cry
+# martok.print_items
+# martok.battle_cry
