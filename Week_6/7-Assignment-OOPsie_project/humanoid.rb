@@ -1,11 +1,11 @@
-class Creature
-  attr_reader :name, :items, :age, :rank
+class Humanoid
+  attr_reader :name, :items, :age, :intelligence
 
-  def initialize(name:, items:, age: 0, rank:)
+  def initialize(name:, items:, age: 0, intelligence:)
     @name = name
     @items = items
     @age = age
-    @rank = rank
+    @intelligence = intelligence
   end
 
   def move(destination)
@@ -18,13 +18,13 @@ class Creature
 
   def give_item(creature:, item_string:, quantity:)
     item = item_string.to_sym
-    if items[item].nil?
+    if items[item].nil? || items[item].zero?
       puts "#{name} doesn't have any #{item}s to give #{creature.name}"
     else
-      quantity_to_give = items[item] >= quantity ?  quantity : items[item]
+      quantity_to_give = items[item] >= quantity ? quantity : items[item]
       accepted = creature.receive_item(item: item, quantity: quantity_to_give)
       if accepted
-        items[item] -= quantity
+        items[item] -= quantity_to_give
         puts "#{name} gave #{quantity_to_give} #{item} to #{creature.name}"
         puts "(Only #{quantity_to_give} #{item} were available to give)" if quantity_to_give < quantity
       else
@@ -46,38 +46,8 @@ class Creature
     puts "#{name} has the following items:"
     items.each_pair { |key, value| puts "#{key}: #{value}" }
   end
+
+  def to_s
+    "#{name} is a #{self.class}, they are #{age} years old and their intelligence level is #{intelligence}/100."
+  end
 end
-
-picard = Creature.new(
-  name: "Jean Luc",
-  items: {
-    log: 2,
-    phaser: 3,
-    teacup: 1,
-  },
-  age: 100,
-  rank: "Captain"
-)
-
-data = Creature.new(
-  name: "Data",
-  items: {
-    cat: 1,
-    phaser: 1,
-    tricorder: 1,
-  },
-   age: 34,
-  rank: "Lieutenant"
-)
-
-picard.print_items
-picard.move("Ready room")
-picard.speak("Engage!")
-
-picard.give_item(
-  creature: data,
-  item_string: "phaser",
-  quantity: 4
-)
-
-puts data.items
